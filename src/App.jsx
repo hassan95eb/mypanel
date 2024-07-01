@@ -1,12 +1,17 @@
+import { useState } from "react";
 import Content from "./Content";
 import Sidebar from "./Sidebar";
 import "./style.css";
+import { MainBodyContext } from "./context/MainBodyContext";
 
 export default function App() {
+  const [offcanvas, setOffcanvas] = useState(true);
   return (
     <div className="mian-body">
-      <Sidebar />
-      <Content />
+      <MainBodyContext.Provider value={{ offcanvas, setOffcanvas }}>
+        <Sidebar />
+        <Content />
+      </MainBodyContext.Provider>
     </div>
   );
 }
