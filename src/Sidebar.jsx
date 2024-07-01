@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import profileImg from "./assets/image/profile.jpg";
+// import homeIcon from "./assets/image/home-button-icon.svg";
 import { MainBodyContext } from "./context/MainBodyContext";
 export default function Sidebar() {
   const { offcanvas } = useContext(MainBodyContext);
@@ -32,6 +33,22 @@ export default function Sidebar() {
               <h2 className="user-sidebar fs-5 text-white">Hassan Amini</h2>
               <h5 className="user-status-sidebar fs-6 ">Admin</h5>
             </div>
+          </div>
+          <div className="menu-sidebar">
+            <ul className="navbar-sidebar">
+              <a href="#" className="navLink">
+                <li className="navitem">Home</li>
+              </a>
+              <a href="#" className="navLink">
+                <li className="navitem">Users</li>
+              </a>
+              <a href="#" className="navLink">
+                <li className="navitem">Posts</li>
+              </a>
+              <a href="#" className="navLink">
+                <li className="navitem">Products</li>
+              </a>
+            </ul>
           </div>
         </div>
       </div>

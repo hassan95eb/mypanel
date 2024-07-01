@@ -1,18 +1,14 @@
 import { useContext } from "react";
+import NavbarContent from "./NavbarContent/NavbarContent";
+import User from "./Users/User";
 import { MainBodyContext } from "./context/MainBodyContext";
-import { Button } from "react-bootstrap";
-import bars from "./assets/image/hamburger-menu-icon.svg";
 
 export default function Content() {
-  const { offcanvas, setOffcanvas } = useContext(MainBodyContext);
-  const handleShow = () => {
-    setOffcanvas(!offcanvas);
-  };
+  const { offcanvas } = useContext(MainBodyContext);
   return (
     <div className={`content-main ${!offcanvas ? "open" : ""}`}>
-      <Button variant="outline-danger" onClick={handleShow}>
-        <img src={bars} className="offcanvas-icon" alt="offcanvas icon" />
-      </Button>
+      <NavbarContent />
+      <User />
     </div>
   );
 }
