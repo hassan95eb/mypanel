@@ -12,12 +12,12 @@ export default function NavbarContent() {
   return (
     <nav className="navbar navbar-expand-lg bg-base">
       <div className="container-fluid">
-        <div className="col-2 col-lg-1">
+        <div className="col-3 col-lg-1">
           <Button variant="outline-danger" onClick={handleShow}>
             <img src={bars} className="offcanvas-icon" alt="offcanvas icon" />
           </Button>
         </div>
-        <div className="col-lg-3">
+        {/* <div className="col-lg-3">
           <form className="d-flex">
             <input
               className="form-control me-2"
@@ -29,7 +29,7 @@ export default function NavbarContent() {
               Search
             </button>
           </form>
-        </div>
+        </div> */}
         <div className="col-9 col-lg-8">
           <div className="d-flex justify-content-end align-items-center">
             <Dropdown>

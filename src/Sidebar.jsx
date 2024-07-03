@@ -1,9 +1,14 @@
 import { useContext } from "react";
+import closeBtn from "./assets/image/cross-icon.svg";
 import profileImg from "./assets/image/profile.jpg";
 // import homeIcon from "./assets/image/home-button-icon.svg";
 import { MainBodyContext } from "./context/MainBodyContext";
+import { Link } from "react-router-dom";
 export default function Sidebar() {
-  const { offcanvas } = useContext(MainBodyContext);
+  const { offcanvas, setOffcanvas } = useContext(MainBodyContext);
+  const handleShow = () => {
+    setOffcanvas(!offcanvas);
+  };
   return (
     <div className={`sidebar-main ${offcanvas ? "open" : ""}`}>
       <div className="container">
@@ -39,17 +44,23 @@ export default function Sidebar() {
               <a href="#" className="navLink">
                 <li className="navitem">Home</li>
               </a>
-              <a href="#" className="navLink">
+              <Link to="/user" className="navLink">
                 <li className="navitem">Users</li>
-              </a>
-              <a href="#" className="navLink">
+              </Link>
+              <Link to="/post" className="navLink">
                 <li className="navitem">Posts</li>
-              </a>
-              <a href="#" className="navLink">
+              </Link>
+              <Link to="/products" className="navLink">
                 <li className="navitem">Products</li>
-              </a>
+              </Link>
             </ul>
           </div>
+          <button
+            onClick={handleShow}
+            className="close-offcanvas d-block d-lg-none"
+          >
+            <img src={closeBtn} width="30px" />
+          </button>
         </div>
       </div>
     </div>
